@@ -10,7 +10,7 @@ using namespace std;
 void nhap(float a[max][max], int m, int n) { 
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
-			cout << " a[" << i << "][" << j << "]= ";
+			cout << "a[" << i << "][" << j << "]= ";
 			cin >> a[i][j];
 		}
 	}
@@ -119,13 +119,12 @@ int main() {
 		cout << "Nhap so cot cua ma tran: "; cin >> n;  
 		nhap(a, m, n);
 		system("cls");
-		cout << "" <<endl;
 		cout << "---------------MENU---------------" << endl;
-		cout << "a. Ma tran chuyen vi" << endl;
+		cout << "a. Chuyen vi ma tran" << endl;
 		cout << "b. Tinh tong cac so trong mang" << endl; 
 		cout << "c. Dem so phan tu am trong mang" << endl;
 		cout << "d. Tim so lon nhat trong mang" << endl; 
-		if (m = n) cout << "e. Tinh trong duong cheo chinh va phu" << endl;
+		if (m == n) cout << "e. Tinh trong duong cheo chinh va phu" << endl;
 		cout << "----------------------------------" << endl; 
 		char chon;
 		cout<<"Nhap y ban muon chon: "; cin >> chon; 
@@ -133,22 +132,25 @@ int main() {
 		
 		switch (chon) {
 			case 'a': 
-				cout<<"Mang truoc chuyen vi"<<endl;
+				cout << "Mang truoc chuyen vi" << endl;
 				xuat(a, m, n);
-				cout<<"Mang sau chuyen vi"<<endl;
+				cout << "Mang sau chuyen vi" << endl;
 			    chuyen_vi(m,n,a);
 				break; 
 			case 'b':
-				cout <<"Tong cac so cua ma tran la: "<<sum(a,m, n);
+				cout << "Tong cac so cua ma tran la: " << sum(a,m, n);
 				break;
 			case 'c':
-				cout<<"so phan tu am trong mang la:"<<soam(a, m, n);
+				cout << "so phan tu am trong mang la:" << soam(a, m, n);
 				break;
 			case 'd':
-				cout <<"So lon nhat trong mang la: "<<min(a,m,n);
+				cout << "So lon nhat trong mang la: " << min(a,m,n);
 				break; 
 			case 'e':
 				tong_chinh_phu(a, n);
+				break;
+			default:
+				cout << "Ban da nhap sai!!!" << endl;
 				break;
 		}
 		break; 
