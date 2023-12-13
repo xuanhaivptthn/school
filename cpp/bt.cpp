@@ -119,9 +119,9 @@ int main() {
 		cout << "---------------MENU---------------" << endl;
 		cout << "a. Ma tran chuyen vi" << endl;
 		cout << "b. Tinh tong cac so trong mang" << endl; 
-		cout << "c. Tinh trong duong cheo chinh va phu" << endl;
-		cout << "d. Dem so phan tu am trong mang" << endl;
-		cout << "e. Tim so lon nhat trong mang" << endl; 
+		cout << "c. Dem so phan tu am trong mang" << endl;
+		cout << "d. Tim so lon nhat trong mang" << endl; 
+		if (m = n) cout << "e. Tinh trong duong cheo chinh va phu" << endl;
 		cout << "----------------------------------" << endl; 
 		char chon;
 		cout<<"Nhap y ban muon chon: "; cin >> chon; 
@@ -142,26 +142,27 @@ int main() {
 			cout << "Nhap so cot cua ma tran: ";cin>>n;
 			nhap(a, m ,n);
 			cout <<"Tong cac so cua ma tran la: "<<sum(a,m, n);
-			break; 
-		case 'c':
-			cout << "Nhap canh cua ma tran: ";cin>>n; 
-			nhap(a, m, n);
-			xuat(a, m, n);
-			tong_chinh_phu(a, n);
 			break;
-		case 'd':
+		case 'c':
 			cout << "Nhap so hang cua ma tran: ";cin>>m; 
 			cout << "Nhap so cot cua ma tran: ";cin>>n;
 			nhap(a, m, n);
 			cout<<"so phan tu am trong mang la:"<<soam(a, m, n);
 			break;
-		case 'e':
+		case 'd':
 			cout << "Nhap so hang cua ma tran: ";cin>>m; 
 			cout << "Nhap so cot cua ma tran: ";cin>>n;
 			nhap(a, m ,n);
 			cout <<"So lon nhat trong mang la: "<<min(a,m,n);
 			//xuat(a,m,n);
-		break; 
+			break; 
+		case 'e':
+			cout << "Nhap canh cua ma tran: ";cin>>n; 
+			nhap(a, m, n);
+			xuat(a, m, n);
+			tong_chinh_phu(a, n);
+			break;
+		
 		}
 		break; 
 	}
