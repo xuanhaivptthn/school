@@ -112,10 +112,14 @@ int main() {
 	cout << "Nhap so ban muon chon: "; cin >> dau; 
 	system("cls");
 
-    switch (dau){ 
+    switch (dau) { 
     case 1: {
 		cout << "Ban da chon mang hai chieu!!!" << endl;
-		cout << "" <<endl; 
+		cout << "Nhap so hang cua ma tran: "; cin >> m; 
+		cout << "Nhap so cot cua ma tran: "; cin >> n;  
+		nhap(a, m, n);
+		system("cls");
+		cout << "" <<endl;
 		cout << "---------------MENU---------------" << endl;
 		cout << "a. Ma tran chuyen vi" << endl;
 		cout << "b. Tinh tong cac so trong mang" << endl; 
@@ -129,40 +133,23 @@ int main() {
 		
 		switch (chon) {
 			case 'a': 
-				cout << "Nhap so hang cua ma tran: ";cin>>m; 
-				cout << "Nhap so cot cua ma tran: ";cin>>n;  
-				nhap(a, m, n);
 				cout<<"Mang truoc chuyen vi"<<endl;
 				xuat(a, m, n);
 				cout<<"Mang sau chuyen vi"<<endl;
 			    chuyen_vi(m,n,a);
 				break; 
-		case 'b':
-			cout << "Nhap so hang cua ma tran: ";cin>>m; 
-			cout << "Nhap so cot cua ma tran: ";cin>>n;
-			nhap(a, m ,n);
-			cout <<"Tong cac so cua ma tran la: "<<sum(a,m, n);
-			break;
-		case 'c':
-			cout << "Nhap so hang cua ma tran: ";cin>>m; 
-			cout << "Nhap so cot cua ma tran: ";cin>>n;
-			nhap(a, m, n);
-			cout<<"so phan tu am trong mang la:"<<soam(a, m, n);
-			break;
-		case 'd':
-			cout << "Nhap so hang cua ma tran: ";cin>>m; 
-			cout << "Nhap so cot cua ma tran: ";cin>>n;
-			nhap(a, m ,n);
-			cout <<"So lon nhat trong mang la: "<<min(a,m,n);
-			//xuat(a,m,n);
-			break; 
-		case 'e':
-			cout << "Nhap canh cua ma tran: ";cin>>n; 
-			nhap(a, m, n);
-			xuat(a, m, n);
-			tong_chinh_phu(a, n);
-			break;
-		
+			case 'b':
+				cout <<"Tong cac so cua ma tran la: "<<sum(a,m, n);
+				break;
+			case 'c':
+				cout<<"so phan tu am trong mang la:"<<soam(a, m, n);
+				break;
+			case 'd':
+				cout <<"So lon nhat trong mang la: "<<min(a,m,n);
+				break; 
+			case 'e':
+				tong_chinh_phu(a, n);
+				break;
 		}
 		break; 
 	}
