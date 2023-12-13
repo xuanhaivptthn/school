@@ -8,9 +8,9 @@ using namespace std;
 
 // nhap mang hai chieu
 void nhap(float a[max][max], int m, int n) { 
-	for (int i = 0; i < m; i++){
-		for (int j = 0; j < n; j++){
-			cout << " a[" << i << "]["<<j<<"]=";
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
+			cout << " a[" << i << "][" << j << "]= ";
 			cin >> a[i][j];
 		}
 	}
@@ -20,7 +20,7 @@ void nhap(float a[max][max], int m, int n) {
 void xuat(float a[max][max], int m, int n) {
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            cout << setw(6) << a[i][j] << " ";
+            cout << a[i][j] << setw(5);
         }
       cout << endl;
     }
@@ -30,7 +30,7 @@ void xuat(float a[max][max], int m, int n) {
 void chuyen_vi(int m, int n, float a[max][max]) {
     for (int j = 0; j < n; j++) {
         for (int i = 0; i < m; i++)	{
-            cout << a[i][j] << " ";
+            cout << a[i][j] << setw(5);
         }
         cout << endl;
     }
@@ -48,122 +48,122 @@ float sum(float a[max][max], int m, int n) {
 }
 
 //Tinh tong duong cheo chinh va duong cheo phu 
-float tong_chinh_phu( float a[max][max], int n)
-{
-	for(int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			cout <<"a["<<i<<"]["<<j<<"] = ";
+float tong_chinh_phu(float a[max][max], int n) {
+	for(int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			cout << "a[" << i << "][" << j << "] = ";
 			cin>>a[i][j];
 		}
 	}
+
 	int tdcc = 0;
 	for (int i = 0; i < n; i++)
-	tdcc += a[i][i];
+		tdcc += a[i][i];
+	
 	int tdcp = 0;
 	for (int i = 0; i < n; i++)
-	tdcp += a[i][n-i-1];
-	cout<<"tong duong cheo chinh: "<<tdcc<<endl;
-	cout<<"tong duong cheo phu: "<<tdcp<<endl;
+		tdcp += a[i][n-i-1];
+	
+	cout<<"Tong duong cheo chinh: " << tdcc << endl;
+	cout<<"Tong duong cheo phu: " << tdcp << endl;
 }
 
 // Dem so phan tu am trong mang  
-int soam(float a[max][max], int m, int n)
-{
-
-int dem = 0;
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
-            if (a[i][j] < 0) {
-                dem ++;
-            }
-        }
-    }
+int soam(float a[max][max], int m, int n) {
+	int dem = 0;
+    	for (int i = 0; i < m; i++) {
+        	for (int j = 0; j < n; j++) {
+            	if (a[i][j] < 0) {
+                	dem ++;
+            	}
+        	}
+    	}
 	return dem; 
 }
 
 // tim so lon nhat trong mang     
-float min(float a[max][max], int m, int n){
-	int tg=a[0][0];
-	for (int i=0; i<m;i++){
-		for (int j=0; j<n; j++){
-			if (a[i][j]>tg){
+float min(float a[max][max], int m, int n) {
+	int tg = a[0][0];
+	for (int i = 0; i < m; i++) {
+		for (int j=0; j < n ; j++) {
+			if (a[i][j] > tg) {
 				tg=a[i][j];
 			}
+		}
 	}
-}
-return tg;
+	return tg;
 }
 
 //xau ki tu
-void xau(){
+void xau() {
 	
 }
-int main() 
-{
+
+int main() {
     int m, n;
     float a[max][max];
     int dau;
-    cout<<"---------------MENU-------------"<<endl;
-	cout<<"1.Mang hai chieu"<<endl;
-	cout<<"2.Xau ki tu"<<endl;
-	cout<<"--------------------------------"<<endl; 
-	cout<<"Nhap so ban muon chon: ";cin>>dau; 
+    system("cls");
+
+	cout << "---------------MENU---------------"<<endl;
+	cout << "1. Mang hai chieu"<<endl;
+	cout << "2. Xau ki tu"<<endl;
+	cout << "----------------------------------"<<endl; 
+	cout << "Nhap so ban muon chon: "; cin >> dau; 
 	system("cls");
+
     switch (dau){ 
-    case 1:
-	{ 
-	cout<<"Ban da chon mang hai chieu!!!"<<endl;
-	cout<<"" <<endl; 
-	cout<<"---------------MENU-------------"<<endl;
-	cout<<"a.Ma tran chuyen vi" <<endl;
-	cout<<"b.Tinh tong cac so trong mang"<<endl; 
-	cout<<"c.Tinh trong duong cheo chinh va phu"<<endl;
-	cout<<"d.Dem so phan tu am trong mang"<<endl;
-	cout<<"e.Tim so lon nhat trong mang"<<endl; 
-	cout<<"--------------------------------"<<endl; 
-	char chon;
-	cout<<"Nhap y ban muon chon:"; 
-	cin>>chon; 
-	system("cls");
-	switch (chon){
-		case 'a': 
-		cout << "Nhap so hang cua ma tran: ";cin>>m; 
-		cout << "Nhap so cot cua ma tran: ";cin>>n;  
-		nhap(a, m, n);
-		cout<<"Mang truoc chuyen vi"<<endl;
-		xuat(a, m, n);
-		cout<<"Mang sau chuyen vi"<<endl;
-	    chuyen_vi(m,n,a);
-		break; 
+    case 1: {
+		cout << "Ban da chon mang hai chieu!!!" << endl;
+		cout << "" <<endl; 
+		cout << "---------------MENU---------------" << endl;
+		cout << "a. Ma tran chuyen vi" << endl;
+		cout << "b. Tinh tong cac so trong mang" << endl; 
+		cout << "c. Tinh trong duong cheo chinh va phu" << endl;
+		cout << "d. Dem so phan tu am trong mang" << endl;
+		cout << "e. Tim so lon nhat trong mang" << endl; 
+		cout << "----------------------------------" << endl; 
+		char chon;
+		cout<<"Nhap y ban muon chon: "; cin >> chon; 
+		system("cls");
+		
+		switch (chon) {
+			case 'a': 
+				cout << "Nhap so hang cua ma tran: ";cin>>m; 
+				cout << "Nhap so cot cua ma tran: ";cin>>n;  
+				nhap(a, m, n);
+				cout<<"Mang truoc chuyen vi"<<endl;
+				xuat(a, m, n);
+				cout<<"Mang sau chuyen vi"<<endl;
+			    chuyen_vi(m,n,a);
+				break; 
 		case 'b':
-		cout << "Nhap so hang cua ma tran: ";cin>>m; 
-		cout << "Nhap so cot cua ma tran: ";cin>>n;
-		nhap(a, m ,n);
-		cout <<"Tong cac so cua ma tran la: "<<sum(a,m, n);
-		break; 
+			cout << "Nhap so hang cua ma tran: ";cin>>m; 
+			cout << "Nhap so cot cua ma tran: ";cin>>n;
+			nhap(a, m ,n);
+			cout <<"Tong cac so cua ma tran la: "<<sum(a,m, n);
+			break; 
 		case 'c':
-		cout << "Nhap canh cua ma tran: ";cin>>n; 
-		nhap(a, m, n);
-		xuat(a, m, n);
-		tong_chinh_phu(a, n);
-		break;
+			cout << "Nhap canh cua ma tran: ";cin>>n; 
+			nhap(a, m, n);
+			xuat(a, m, n);
+			tong_chinh_phu(a, n);
+			break;
 		case 'd':
-		cout << "Nhap so hang cua ma tran: ";cin>>m; 
-		cout << "Nhap so cot cua ma tran: ";cin>>n;
-		nhap(a, m, n);
-		cout<<"so phan tu am trong mang la:"<<soam(a, m, n);
-		break;
+			cout << "Nhap so hang cua ma tran: ";cin>>m; 
+			cout << "Nhap so cot cua ma tran: ";cin>>n;
+			nhap(a, m, n);
+			cout<<"so phan tu am trong mang la:"<<soam(a, m, n);
+			break;
 		case 'e':
-		cout << "Nhap so hang cua ma tran: ";cin>>m; 
-		cout << "Nhap so cot cua ma tran: ";cin>>n;
-		nhap(a, m ,n);
-		cout <<"So lon nhat trong mang la: "<<min(a,m,n);
-		//xuat(a,m,n);
+			cout << "Nhap so hang cua ma tran: ";cin>>m; 
+			cout << "Nhap so cot cua ma tran: ";cin>>n;
+			nhap(a, m ,n);
+			cout <<"So lon nhat trong mang la: "<<min(a,m,n);
+			//xuat(a,m,n);
+		break; 
+		}
 		break; 
 	}
-	break; 
-}
-}
+	}
 }
