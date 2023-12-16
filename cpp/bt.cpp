@@ -64,8 +64,8 @@ float tong_chinh_phu(float a[max][max], int n) {
 	for (int i = 0; i < n; i++)
 		tdcp += a[i][n-i-1];
 	
-	cout<<"Tong duong cheo chinh: " << tdcc << endl;
-	cout<<"Tong duong cheo phu: " << tdcp << endl;
+	cout << "Tong duong cheo chinh: " << tdcc << endl;
+	cout << "Tong duong cheo phu: " << tdcp << endl;
 }
 
 // Dem so phan tu am trong mang  
@@ -95,16 +95,17 @@ float min(float a[max][max], int m, int n) {
 }
 
 //xau ki tu
-void xau() {
-	
+void kitu(string str) {
+    int count = 0;
+	int i=0;
+	while (str[i]!="") {
+		count=+1;
+	}
+    cout << count;
 }
 
 int main() {
-    int m, n;
-    float a[max][max];
     int dau;
-    system("cls");
-
 	cout << "---------------MENU---------------"<<endl;
 	cout << "1. Mang hai chieu"<<endl;
 	cout << "2. Xau ki tu"<<endl;
@@ -114,6 +115,8 @@ int main() {
 
     switch (dau) { 
     case 1: {
+		int m, n;
+    	float a[max][max];
 		cout << "Ban da chon mang hai chieu!!!" << endl;
 		cout << "Nhap so hang cua ma tran: "; cin >> m; 
 		cout << "Nhap so cot cua ma tran: "; cin >> n;  
@@ -127,7 +130,7 @@ int main() {
 		if (m == n) cout << "e. Tinh trong duong cheo chinh va phu" << endl;
 		cout << "----------------------------------" << endl; 
 		char chon;
-		cout<<"Nhap y ban muon chon: "; cin >> chon; 
+		cout << "Nhap y ban muon chon: "; cin >> chon; 
 		system("cls");
 		
 		switch (chon) {
