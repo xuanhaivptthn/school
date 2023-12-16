@@ -2,7 +2,6 @@
 #include <iomanip>
 #include <stdlib.h>
 #define max 100
-
 using namespace std; 
 
 // nhap mang hai chieu
@@ -19,7 +18,7 @@ void nhap(float a[max][max], int m, int n) {
 void xuat(float a[max][max], int m, int n) {
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            cout << a[i][j] << setw(5);
+            cout << setw(3) << a[i][j];
         }
       cout << endl;
     }
@@ -102,6 +101,8 @@ int main() {
 	nhap(a, m, n);
 
 	system("cls");
+	cout << "Mang da nhap" << endl;
+	xuat(a, m, n);
 	cout << "---------------MENU---------------" << endl;
 	cout << "a. Chuyen vi ma tran" << endl;
 	cout << "b. Tinh tong cac so trong mang" << endl; 
@@ -109,7 +110,7 @@ int main() {
 	cout << "d. Tim so lon nhat trong mang" << endl; 
 	if (m == n) cout << "e. Tinh trong duong cheo chinh va phu" << endl;
 	cout << "----------------------------------" << endl; 
-	
+
 	char chon;
 	cout << "Nhap y ban muon chon: "; cin >> chon; 
 	system("cls");
@@ -125,7 +126,7 @@ int main() {
 			cout << "Tong cac so cua ma tran la: " << sum(a,m, n);
 			break;
 		case 'c':
-			cout << "so phan tu am trong mang la:" << soam(a, m, n);
+			cout << "So phan tu am trong mang la:" << soam(a, m, n);
 			break;
 		case 'd':
 			cout << "So lon nhat trong mang la: " << min(a,m,n);
