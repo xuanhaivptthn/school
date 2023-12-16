@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string.h> 
 #include <iomanip>
 #include <stdlib.h>
 #define max 100
@@ -94,69 +93,48 @@ float min(float a[max][max], int m, int n) {
 	return tg;
 }
 
-//xau ki tu
-void kitu(string str) {
-    int count = 0;
-	int i=0;
-	while (str[i]!="") {
-		count=+1;
-	}
-    cout << count;
-}
-
 int main() {
-    int dau;
-	cout << "---------------MENU---------------"<<endl;
-	cout << "1. Mang hai chieu"<<endl;
-	cout << "2. Xau ki tu"<<endl;
-	cout << "----------------------------------"<<endl; 
-	cout << "Nhap so ban muon chon: "; cin >> dau; 
-	system("cls");
+	int m, n;
+   	float a[max][max];
+	cout << "MANG HAI CHIEU" << endl;
+	cout << "Nhap so hang cua ma tran: "; cin >> m; 
+	cout << "Nhap so cot cua ma tran: "; cin >> n;  
+	nhap(a, m, n);
 
-    switch (dau) { 
-    case 1: {
-		int m, n;
-    	float a[max][max];
-		cout << "Ban da chon mang hai chieu!!!" << endl;
-		cout << "Nhap so hang cua ma tran: "; cin >> m; 
-		cout << "Nhap so cot cua ma tran: "; cin >> n;  
-		nhap(a, m, n);
-		system("cls");
-		cout << "---------------MENU---------------" << endl;
-		cout << "a. Chuyen vi ma tran" << endl;
-		cout << "b. Tinh tong cac so trong mang" << endl; 
-		cout << "c. Dem so phan tu am trong mang" << endl;
-		cout << "d. Tim so lon nhat trong mang" << endl; 
-		if (m == n) cout << "e. Tinh trong duong cheo chinh va phu" << endl;
-		cout << "----------------------------------" << endl; 
-		char chon;
-		cout << "Nhap y ban muon chon: "; cin >> chon; 
-		system("cls");
-		
-		switch (chon) {
-			case 'a': 
-				cout << "Mang truoc chuyen vi" << endl;
-				xuat(a, m, n);
-				cout << "Mang sau chuyen vi" << endl;
-			    chuyen_vi(m,n,a);
-				break; 
-			case 'b':
-				cout << "Tong cac so cua ma tran la: " << sum(a,m, n);
-				break;
-			case 'c':
-				cout << "so phan tu am trong mang la:" << soam(a, m, n);
-				break;
-			case 'd':
-				cout << "So lon nhat trong mang la: " << min(a,m,n);
-				break; 
-			case 'e':
-				tong_chinh_phu(a, n);
-				break;
-			default:
-				cout << "Ban da nhap sai!!!" << endl;
-				break;
-		}
-		break; 
-	}
+	system("cls");
+	cout << "---------------MENU---------------" << endl;
+	cout << "a. Chuyen vi ma tran" << endl;
+	cout << "b. Tinh tong cac so trong mang" << endl; 
+	cout << "c. Dem so phan tu am trong mang" << endl;
+	cout << "d. Tim so lon nhat trong mang" << endl; 
+	if (m == n) cout << "e. Tinh trong duong cheo chinh va phu" << endl;
+	cout << "----------------------------------" << endl; 
+	
+	char chon;
+	cout << "Nhap y ban muon chon: "; cin >> chon; 
+	system("cls");
+	
+	switch (chon) {
+		case 'a': 
+			cout << "Mang truoc chuyen vi" << endl;
+			xuat(a, m, n);
+			cout << "Mang sau chuyen vi" << endl;
+		    chuyen_vi(m,n,a);
+			break; 
+		case 'b':
+			cout << "Tong cac so cua ma tran la: " << sum(a,m, n);
+			break;
+		case 'c':
+			cout << "so phan tu am trong mang la:" << soam(a, m, n);
+			break;
+		case 'd':
+			cout << "So lon nhat trong mang la: " << min(a,m,n);
+			break; 
+		case 'e':
+			tong_chinh_phu(a, n);
+			break;
+		default:
+			cout << "Ban da nhap sai!!!" << endl;
+			break;
 	}
 }
