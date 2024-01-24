@@ -1,0 +1,3 @@
+MA HANG             TEN HANG                      DON VI TINH    DON GIA        SO LUONG       THANH TIEN     
+111                 aaa                           cai            5000           5              25000          
+222                 bbb                           chiec          6000           7              42000          
