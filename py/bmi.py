@@ -1,0 +1,8 @@
+w = float(input())
+h = float(input())
+bmi = w/(h**2)
+if (bmi>30): print("Loai 5: Beo phi do 2")
+elif (bmi>25): print("Loai 4: Beo phi do 1")
+elif (bmi>23): print("Loai 3: Tien beo phi")
+elif (bmi>18.5): print("Loai 2: Binh thuong")
+else: print("Gay")
