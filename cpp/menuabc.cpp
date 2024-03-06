@@ -13,7 +13,7 @@ int main () {
 		case 1: cout << "Tong a + b + c = " << a + b + c; break;
 		case 2: cout << "Tich a * b * c = " << a * b * c; break;
 		case 3: {
-			if (a !=0) {
+			if (a !=0 && b != c) {
 				float x = (c-b)/a;
 				cout << "Nghiem cua phuong trinh la: " << x;
 			}
