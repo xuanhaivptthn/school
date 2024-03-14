@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    int t,n,ls;
+    float t,n,ls;
     cout << "Nhap tien goc: "; cin >> t;
     cout << "Nhap lai hang thang: "; cin >> ls;
     cout << "Nhap so thang: "; cin >> n;
