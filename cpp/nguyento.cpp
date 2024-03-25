@@ -12,8 +12,14 @@ bool kt(int x) {
 int main () {
 	int n;
 	cout << "Nhap n: "; cin >> n;
-	for(int i=2; i<=n; i++) {
-		if (kt(i)==true) cout << i << " ";
+	int d = 0;
+	for(int i=600; i<=n; i++) {
+		if (kt(i)==true) { 
+			cout << i << " ";
+			d +=1;
+		}
 	}
+	cout << endl;
+	cout << "Tong: " << d;
 	return 0;
 }
